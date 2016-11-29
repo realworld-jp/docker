@@ -8,7 +8,7 @@ RUN apt-key add GPG-KEY-td-agent && \
     apt-get install -y --force-yes td-agent gcc make libmysqlclient-dev && \
     td-agent-gem install fluent-plugin-mysql-appender
 
-ADD td-agent.conf /etc/td-agent/td-agent.conf
+COPY td-agent.conf /etc/td-agent/td-agent.conf
 
 RUN gem install td td-client
 
