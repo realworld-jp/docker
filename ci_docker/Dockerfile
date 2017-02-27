@@ -1,4 +1,4 @@
-FROM php:alpine
+FROM php:7.0-alpine
 
 #### docker:1.11 ####
 
