@@ -8,6 +8,3 @@ RUN apk --no-cache --update add \
         python \
         py-pip \
     && pip install awscli --ignore-installed six
-
-ENV GOPATH /go
-ENV PATH $PATH:$GOPATH/bin
