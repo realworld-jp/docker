@@ -7,4 +7,5 @@ RUN apk --no-cache --update add \
         openssh-client \
         python \
         py-pip \
+        zip \
     && pip install awscli --ignore-installed six
