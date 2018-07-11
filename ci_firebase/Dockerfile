@@ -3,9 +3,6 @@ FROM debian:latest
 EXPOSE 5000
 
 ENV NVM_DIR /usr/local/nvm
-ENV FIREBASE_NODE_VERSION 10.5.0
-ENV NODE_PATH $NVM_DIR/v$FIREBASE_HOSTING_NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$FIREBASE_HOSTING_NODE_VERSION/bin:$PATH
 
 RUN rm /bin/sh \
     && ln -s /bin/bash /bin/sh
@@ -58,8 +55,4 @@ RUN apt-get update \
     && pip install awscli \
     && curl --silent -o- \
         https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
-    && nvm install $FIREBASE_NODE_VERSION \
-    && nvm alias firebase $FIREBASE_NODE_VERSION \
-    && nvm use firebase \
-    && npm install -g firebase-tools
+    && source $NVM_DIR/nvm.sh
