@@ -3,6 +3,9 @@ FROM debian:latest
 EXPOSE 5000
 
 ENV NVM_DIR /usr/local/nvm
+ENV DEFAULT_NODE_VERSION 10.5.0
+ENV NODE_PATH $NVM_DIR/v$DEFAULT_NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$DEFAULT_NODE_VERSION/bin:$PATH
 
 RUN rm /bin/sh \
     && ln -s /bin/bash /bin/sh
@@ -55,4 +58,7 @@ RUN apt-get update \
     && pip install awscli \
     && curl --silent -o- \
         https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
-    && source $NVM_DIR/nvm.sh
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $DEFAULT_NODE_VERSION \
+    && nvm alias firebase $DEFAULT_NODE_VERSION \
+    && nvm use firebase
