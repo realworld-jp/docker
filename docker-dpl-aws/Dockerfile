@@ -46,12 +46,12 @@ RUN set -ex \
 #### s3 deploy ####
 
 RUN set -ex \
-  && gem install jmespath --version 1.4.0 --no-ri --no-rdoc \
-  && gem install aws-sigv4 --version 1.0.3 --no-ri --no-rdoc \
-  && gem install aws-sdk-core --version 3.22.1 --no-ri --no-rdoc \
-  && gem install aws-sdk-resources --version 3.22.0 --no-ri --no-rdoc \
-  && gem install aws-sdk --version 3.0.1 --no-ri --no-rdoc \
-  && gem install mime-types --version 3.1 --no-ri --no-rdoc
+  && gem install jmespath --version 1.4.0 -N \
+  && gem install aws-sigv4 --version 1.0.3 -N \
+  && gem install aws-sdk-core --version 3.22.1 -N \
+  && gem install aws-sdk-resources --version 3.22.0 -N \
+  && gem install aws-sdk --version 3.0.1 -N \
+  && gem install mime-types --version 3.1 -N
 
 #### make ####
 
