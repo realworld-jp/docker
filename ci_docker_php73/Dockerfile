@@ -26,11 +26,8 @@ RUN set -xe \
     && rm -rf /tmp/* \
     && apk del .memcached-deps .phpize-deps
 
-RUN apk add --update \
-        nodejs \
-        npm
-
 RUN apk add --no-cache \
+        npm \
         build-base \
         alpine-sdk \
         gcc \
