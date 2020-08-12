@@ -71,5 +71,5 @@ RUN apk add --no-cache --update libzip-dev
 RUN docker-php-ext-install zip
 
 #### ecs-cli ####
-RUN curl https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest -o /usr/local/bin/ecs-cli \
+RUN curl https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v1.20.0 -o /usr/local/bin/ecs-cli \
     && chmod +x /usr/local/bin/ecs-cli
