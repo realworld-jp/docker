@@ -66,9 +66,9 @@ RUN set -ex \
 #### pdo-mysql ####
 RUN docker-php-ext-install pdo_mysql
 
-#### php-extension zip bcmath ####
-RUN apk add --no-cache --update libzip-dev
-RUN docker-php-ext-install zip bcmath
+#### php-extension zip bcmath gd ####
+RUN apk add --no-cache --update libzip-dev libpng-dev libpng
+RUN docker-php-ext-install zip bcmath gd
 
 #### ecs-cli ####
 RUN curl https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v1.20.0 -o /usr/local/bin/ecs-cli \
