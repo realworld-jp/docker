@@ -64,7 +64,7 @@ RUN set -ex \
     && apk del .xdebug-builddeps
 
 #### pdo-mysql ####
-RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_mysql mbstring
 
 #### php-extension zip bcmath gd ####
 RUN apk add --no-cache --update libzip-dev libpng-dev libpng
