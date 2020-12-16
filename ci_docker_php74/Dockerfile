@@ -42,6 +42,7 @@ RUN apk add --no-cache \
         python3-dev \
         zip \
         oniguruma-dev \
+        icu-dev \
     && npm install -g yarn \
     && pip3 install --upgrade pip \
     && pip3 install docker-compose \
@@ -65,7 +66,7 @@ RUN set -ex \
     && apk del .xdebug-builddeps
 
 #### pdo-mysql ####
-RUN docker-php-ext-install pdo_mysql mbstring
+RUN docker-php-ext-install pdo_mysql mbstring intl
 
 #### php-extension zip bcmath gd ####
 RUN apk add --no-cache --update libzip-dev libpng-dev libpng
